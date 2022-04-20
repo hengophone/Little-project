@@ -1,2 +1,2 @@
 # Little-project
-repository for unity learning. Currently working on calculator.
+Repository for unity learning. Currently working on a calculator app using Unity.
