@@ -25,7 +25,7 @@ public class Calculator : MonoBehaviour
     public void OnClickMultiply()
     {
 
-        Result.text = (Convert.ToInt32(FirstNumber.text) * Convert.ToInt32(SecondNumber.text)).ToString();
+        Result.text = (Convert.ToDouble(FirstNumber.text) * Convert.ToDouble(SecondNumber.text)).ToString();
     }
 
     public void OnClickDivide()
@@ -33,7 +33,7 @@ public class Calculator : MonoBehaviour
 
         if (Convert.ToInt32(SecondNumber.text) != 0) {
 
-            Result.text = (Convert.ToInt32(FirstNumber.text) / Convert.ToInt32(SecondNumber.text)).ToString();
+            Result.text = (Convert.ToDouble(FirstNumber.text) / Convert.ToDouble(SecondNumber.text)).ToString();
             }
         else Result.text = "DIVISION BY ZERO!";
     }
@@ -41,29 +41,35 @@ public class Calculator : MonoBehaviour
     public void OnClickMin()
     {
 
-        if (Convert.ToInt32(FirstNumber.text) > Convert.ToInt32(SecondNumber.text))
+        if (Convert.ToInt32(FirstNumber.text) == Convert.ToInt32(SecondNumber.text))
         {
-
-            Result.text = ( Convert.ToInt32(SecondNumber.text)).ToString();
+            Result.text = "EQUAL NUMBERS";
         }
-        else Result.text = (Convert.ToInt32(FirstNumber.text)).ToString();
-        
+        else if (Convert.ToInt32(FirstNumber.text) > Convert.ToInt32(SecondNumber.text))
+        {
+            Result.text = (Convert.ToInt32(SecondNumber.text)).ToString();
+        }
+        else if (Convert.ToInt32(FirstNumber.text) < Convert.ToInt32(SecondNumber.text))
+        {
+            Result.text = (Convert.ToInt32(FirstNumber.text)).ToString();
+        }
+
     }
 
     public void OnClickMax()
     {
 
-        if (Convert.ToInt32(FirstNumber.text) > Convert.ToInt32(SecondNumber.text))
+        if (Convert.ToInt32(FirstNumber.text) == Convert.ToInt32(SecondNumber.text))
         {
-            Result.text = (Convert.ToInt32(FirstNumber.text)).ToString();
+            Result.text = "EQUAL NUMBERS";
         }
         else if (Convert.ToInt32(FirstNumber.text) < Convert.ToInt32(SecondNumber.text))
         {
             Result.text = (Convert.ToInt32(SecondNumber.text)).ToString();
         }
-        else if (Convert.ToInt32(FirstNumber.text) == Convert.ToInt32(SecondNumber.text))
+        else if (Convert.ToInt32(FirstNumber.text) > Convert.ToInt32(SecondNumber.text))
         {
-            Result.text = "EQUAL NUMBERS";
+            Result.text = (Convert.ToInt32(FirstNumber.text)).ToString();
         }
 
     }
