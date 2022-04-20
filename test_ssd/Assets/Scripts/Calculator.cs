@@ -38,4 +38,33 @@ public class Calculator : MonoBehaviour
         else Result.text = "DIVISION BY ZERO!";
     }
 
+    public void OnClickMin()
+    {
+
+        if (Convert.ToInt32(FirstNumber.text) > Convert.ToInt32(SecondNumber.text))
+        {
+
+            Result.text = ( Convert.ToInt32(SecondNumber.text)).ToString();
+        }
+        else Result.text = (Convert.ToInt32(FirstNumber.text)).ToString();
+        
+    }
+
+    public void OnClickMax()
+    {
+
+        if (Convert.ToInt32(FirstNumber.text) > Convert.ToInt32(SecondNumber.text))
+        {
+            Result.text = (Convert.ToInt32(FirstNumber.text)).ToString();
+        }
+        else if (Convert.ToInt32(FirstNumber.text) < Convert.ToInt32(SecondNumber.text))
+        {
+            Result.text = (Convert.ToInt32(SecondNumber.text)).ToString();
+        }
+        else if (Convert.ToInt32(FirstNumber.text) == Convert.ToInt32(SecondNumber.text))
+        {
+            Result.text = "EQUAL NUMBERS";
+        }
+
+    }
 };
