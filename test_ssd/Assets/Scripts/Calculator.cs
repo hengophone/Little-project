@@ -73,4 +73,16 @@ public class Calculator : MonoBehaviour
         }
 
     }
+
+    public void OnClickPower()
+    {
+            Result.text = (Math.Pow((Convert.ToDouble(FirstNumber.text)),Convert.ToDouble(SecondNumber.text))).ToString();
+    }
+
+    public void OnClickQuit()
+    {
+        Application.Quit();
+    }
+
+
 };
