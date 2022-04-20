@@ -13,45 +13,45 @@ public class Calculator : MonoBehaviour
     public void OnClickPlus()
     {
 
-        Result.text = (Convert.ToInt32(FirstNumber.text) + Convert.ToInt32(SecondNumber.text)).ToString();
+        Result.text = (Convert.ToDecimal(FirstNumber.text) + Convert.ToDecimal(SecondNumber.text)).ToString();
     }
 
     public void OnClickMinus()
     {
 
-        Result.text = (Convert.ToInt32(FirstNumber.text) - Convert.ToInt32(SecondNumber.text)).ToString();
+        Result.text = (Convert.ToDecimal(FirstNumber.text) - Convert.ToDecimal(SecondNumber.text)).ToString();
     }
 
     public void OnClickMultiply()
     {
 
-        Result.text = (Convert.ToDouble(FirstNumber.text) * Convert.ToDouble(SecondNumber.text)).ToString();
+        Result.text = (Convert.ToDecimal(FirstNumber.text) * Convert.ToDecimal(SecondNumber.text)).ToString();
     }
 
     public void OnClickDivide()
     {
 
-        if (Convert.ToInt32(SecondNumber.text) != 0) {
-
-            Result.text = (Convert.ToDouble(FirstNumber.text) / Convert.ToDouble(SecondNumber.text)).ToString();
-            }
+        if (Convert.ToInt32(SecondNumber.text) != 0) 
+        {
+            Result.text = Decimal.Round((Convert.ToDecimal(FirstNumber.text) / Convert.ToDecimal(SecondNumber.text)),10).ToString();
+        }
         else Result.text = "DIVISION BY ZERO!";
     }
 
     public void OnClickMin()
     {
 
-        if (Convert.ToInt32(FirstNumber.text) == Convert.ToInt32(SecondNumber.text))
+        if (Convert.ToDecimal(FirstNumber.text) == Convert.ToDecimal(SecondNumber.text))
         {
             Result.text = "EQUAL NUMBERS";
         }
-        else if (Convert.ToInt32(FirstNumber.text) > Convert.ToInt32(SecondNumber.text))
+        else if (Convert.ToDecimal(FirstNumber.text) > Convert.ToDecimal(SecondNumber.text))
         {
             Result.text = (Convert.ToInt32(SecondNumber.text)).ToString();
         }
-        else if (Convert.ToInt32(FirstNumber.text) < Convert.ToInt32(SecondNumber.text))
+        else if (Convert.ToDecimal(FirstNumber.text) < Convert.ToDecimal(SecondNumber.text))
         {
-            Result.text = (Convert.ToInt32(FirstNumber.text)).ToString();
+            Result.text = (Convert.ToDecimal(FirstNumber.text)).ToString();
         }
 
     }
@@ -59,17 +59,17 @@ public class Calculator : MonoBehaviour
     public void OnClickMax()
     {
 
-        if (Convert.ToInt32(FirstNumber.text) == Convert.ToInt32(SecondNumber.text))
+        if (Convert.ToDecimal(FirstNumber.text) == Convert.ToDecimal(SecondNumber.text))
         {
             Result.text = "EQUAL NUMBERS";
         }
-        else if (Convert.ToInt32(FirstNumber.text) < Convert.ToInt32(SecondNumber.text))
+        else if (Convert.ToDecimal(FirstNumber.text) < Convert.ToDecimal(SecondNumber.text))
         {
-            Result.text = (Convert.ToInt32(SecondNumber.text)).ToString();
+            Result.text = (Convert.ToDecimal(SecondNumber.text)).ToString();
         }
-        else if (Convert.ToInt32(FirstNumber.text) > Convert.ToInt32(SecondNumber.text))
+        else if (Convert.ToDecimal(FirstNumber.text) > Convert.ToDecimal(SecondNumber.text))
         {
-            Result.text = (Convert.ToInt32(FirstNumber.text)).ToString();
+            Result.text = (Convert.ToDecimal(FirstNumber.text)).ToString();
         }
 
     }
