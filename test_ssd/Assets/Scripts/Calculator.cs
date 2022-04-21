@@ -11,7 +11,7 @@ public class Calculator : MonoBehaviour
     public InputField FirstNumber;
     public InputField SecondNumber;
 
-    
+
     public void OnClickPlus()
     {
         if (FirstNumber.text.ToString() != "" & SecondNumber.text.ToString() != "")
@@ -20,7 +20,7 @@ public class Calculator : MonoBehaviour
         }
         else
         {
-            Result.text = "NUMBERS MISSING";
+            Result.text = "NO NUMBERS";
         }
     }
 
@@ -32,7 +32,7 @@ public class Calculator : MonoBehaviour
         }
         else
         {
-            Result.text = "NUMBERS MISSING";
+            Result.text = "NO NUMBERS";
         }
     }
 
@@ -44,7 +44,7 @@ public class Calculator : MonoBehaviour
         }
         else
         {
-            Result.text = "NUMBERS MISSING";
+            Result.text = "NO NUMBERS";
         }
     }
 
@@ -60,7 +60,7 @@ public class Calculator : MonoBehaviour
         }
         else
         {
-            Result.text = "NUMBERS MISSING";
+            Result.text = "NO NUMBERS";
         }
     }
 
@@ -83,7 +83,7 @@ public class Calculator : MonoBehaviour
         }
         else
         {
-            Result.text = "NUMBERS MISSING";
+            Result.text = "NO NUMBERS";
         }
 
     }
@@ -107,20 +107,46 @@ public class Calculator : MonoBehaviour
         }
         else
         {
-            Result.text = "NUMBERS MISSING";
+            Result.text = "NO NUMBERS";
         }
     }
 
     public void OnClickPower()
     {
+
         if (FirstNumber.text.ToString() != "" & SecondNumber.text.ToString() != "")
         {
-            // Result.text = Convert.ToDecimal(Math.Pow(FirstNumber, SecondNumber)).ToString();
-            Result.text = System.Math.Pow(Convert.ToDouble(FirstNumber.text), Convert.ToDouble(SecondNumber.text)).ToString();
+            Debug.Log("Numbers Unequal > success");
+            decimal i = decimal.MaxValue;
+            int j;
+            float k;
+
+            j = int.Parse(FirstNumber.text);
+            Debug.Log("First number > " + j);
+
+            j = int.Parse(FirstNumber.text);
+            Debug.Log("Second number > " + j);
+
+            k = Mathf.Pow(float.Parse(FirstNumber.text), float.Parse(SecondNumber.text));
+            Debug.Log("Result in float > " + k);
+            decimal l = Convert.ToDecimal(k);
+            Debug.Log("Result in decimal > " + l);
+
+            try
+            {
+                l = checked(i + l);
+                Result.text = l.ToString();
+            }
+            catch (OverflowException ex)
+            {
+                Debug.Log(ex);
+                Result.text = l.ToString();
+            }
+
         }
-        else 
-        { 
-            Result.text = "NUMBERS MISSING"; 
+        else
+        {
+            Result.text = "NO NUMBERS";
         }
     }
 
